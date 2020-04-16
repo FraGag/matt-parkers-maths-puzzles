@@ -25,6 +25,7 @@ fn main() {
 
 /// Command-line arguments.
 #[derive(StructOpt)]
+#[structopt(about("Solutions to Matt Parker's Math Puzzles in Rust"))]
 enum Puzzle {
     /// Puzzle 1 - Spinning table <http://www.think-maths.co.uk/table-puzzle>
     SpinningTable(spinning_table::Parameters),
