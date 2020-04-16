@@ -8,6 +8,9 @@ mod spinning_table;
 /// [Puzzle 3 - Scrabble®](http://www.think-maths.co.uk/scrabble-puzzle)
 mod scrabble;
 
+/// [Puzzle 4 - Card](http://www.think-maths.co.uk/card-puzzle)
+mod card;
+
 /// Entry point.
 fn main() {
     match Puzzle::from_args() {
@@ -19,6 +22,10 @@ fn main() {
 
         Puzzle::Scrabble(parameters) => {
             println!("{}", scrabble::scrabble(parameters));
+        }
+
+        Puzzle::Card(parameters) => {
+            println!("{:?}", card::card(parameters));
         }
     }
 }
@@ -32,4 +39,7 @@ enum Puzzle {
 
     /// Puzzle 3 - Scrabble® <http://www.think-maths.co.uk/scrabble-puzzle>
     Scrabble(scrabble::Parameters),
+
+    /// Puzzle 4 - Card <http://www.think-maths.co.uk/card-puzzle>
+    Card(card::Parameters),
 }
